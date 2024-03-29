@@ -10,7 +10,7 @@ interface Route {
     name: string;
 }
 
-const LazyLayout = lazy( () => import(/* webpackChunckName: "LazyLayout" */ '../01-lazyload/layout/LazyLayout'));
+const LazyLayout = lazy( () => import(/* webpackChunkName: "LazyLayout" */ '../01-lazyload/layout/LazyLayout'));
 
 export const routes: Route[] = [
     {
