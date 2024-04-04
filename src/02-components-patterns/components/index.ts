@@ -3,7 +3,7 @@ import { ProductCard as ProductCardHoc} from "./ProductCard";
 import { ProductButtons } from "./ProductButtons";
 import { ProductImage } from "./ProductImage";
 import { ProductTitle } from "./ProductTitle";
-import { ProductCardHocProps } from "../interfaces/interfaces";
+import { ProductCardHocProps } from "../interfaces/ProductCardHocProps";
 
 export { ProductButtons } from "./ProductButtons";
 export { ProductImage } from "./ProductImage";
