@@ -12,20 +12,6 @@ export const useShoppingCart = () => {
        // console.log('onProductCountChange', count, product);
        setShoppingCart( oldShoppingCart => {
 
-            const productInCart: ProductInCart = oldShoppingCart[product.id] || { ...product, count: 0};
-
-            if( Math.max( productInCart.count + count, 0) > 0){
-                productInCart.count += count;
-                return {
-                    ...oldShoppingCart,
-                    [product.id]: productInCart
-                }
-            }
-
-            //Borrar el producto
-            const { [product.id]: toDelete, ...rest } = oldShoppingCart;
-            return rest;
-
             //Solución profe
             /*if( count === 0 ){
                 const { [ product.id]: toDelete, ...rest } = oldShoppingCart;
@@ -33,7 +19,7 @@ export const useShoppingCart = () => {
                 return rest;
             }*/
 
-            /*if( count === 0){
+            if( count === 0){
                 const osc = { ...oldShoppingCart }
                 delete osc[product.id];
                 return {
@@ -45,7 +31,7 @@ export const useShoppingCart = () => {
                     ...oldShoppingCart,
                     [ product.id ]: { ...product, count}
                 }
-            }*/
+            }
             
        });
     }

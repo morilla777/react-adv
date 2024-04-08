@@ -1,17 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { UseProductArgs } from "../interfaces/UseProductArgs";
 
 export const useProduct = ( { onChange, product, value = 0}: UseProductArgs) => {
 
     const [ counter, setCounter ] = useState<number>(value);
 
-    const isControlled = useRef( !!onChange );
-
     const increaseBy = ( val:number ) => {
-
-        if( isControlled.current ){
-            return onChange!({ count: value, product });
-        }
 
         const newVal = Math.max( counter + val, 0 )
         
