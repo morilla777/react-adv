@@ -10,7 +10,7 @@ export const useProduct = ( { onChange, product, value = 0}: UseProductArgs) => 
     const increaseBy = ( val:number ) => {
 
         if( isControlled.current ){
-            return onChange!({ count: value, product });
+            return onChange!({ count: val, product });
         }
 
         const newVal = Math.max( counter + val, 0 )
