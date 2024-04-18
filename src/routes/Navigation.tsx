@@ -1,7 +1,7 @@
 import { BrowserRouter, NavLink, Navigate, Route, Routes } from "react-router-dom";
 
 import logo from "../logo.svg";
-import { FormikAbstraction, FormikBasicPage, FormikComponents, FormikYupPage, RegisterPage   } from "../03-forms/pages";
+import { DynamicForm, FormikAbstraction, FormikBasicPage, FormikComponents, FormikYupPage, RegisterFormikPage, RegisterPage   } from "../03-forms/pages";
 
 export const Navigation = () => {
 
@@ -19,6 +19,9 @@ export const Navigation = () => {
               <NavLink to="/register" className={ ({isActive}) => getActiveLinkClassName( isActive ) }>Register Page</NavLink>
             </li>
             <li>
+              <NavLink to="/register-formik" className={ ({isActive}) => getActiveLinkClassName( isActive ) }>Register Formik Page</NavLink>
+            </li>
+            <li>
               <NavLink to="/formik-basic" className={ ({isActive}) => getActiveLinkClassName( isActive ) }>Formik Basic</NavLink>
             </li>
             <li>
@@ -29,6 +32,9 @@ export const Navigation = () => {
             </li>
             <li>
               <NavLink to="/formik-abstraction" className={ ({isActive}) => getActiveLinkClassName( isActive ) }>Formik Abstraction</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dynamic-form" className={ ({isActive}) => getActiveLinkClassName( isActive ) }>Dynamic Form</NavLink>
             </li>
             <li>
               <NavLink to="/users" className={ ({isActive}) => getActiveLinkClassName( isActive ) }>Users</NavLink>
@@ -43,6 +49,8 @@ export const Navigation = () => {
             <Route path='/formik-abstraction' element={ <FormikAbstraction/> } />
             <Route path='users' element={<h1>Users Page</h1>} />
             <Route path='/register' element={ <RegisterPage/> } />
+            <Route path='/register-formik' element={ <RegisterFormikPage/> } />
+            <Route path='/dynamic-form' element={ <DynamicForm/> } />
             <Route path='/*' element={ <Navigate to='/home' replace />} />
         </Routes>
       </div>
